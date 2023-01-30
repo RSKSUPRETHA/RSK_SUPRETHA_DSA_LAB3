@@ -1,28 +1,26 @@
-package com.greatlearning.q1.main;
+package packagecom.greatlearning.q2.main;
 
-import java.util.Scanner;
+import packagecom.greatlearning.q2.service.FindSumPair;
+import packagecom.greatlearning.q2.service.Node;
 
 public class Driver {
 
 	public static void main(String[] args) 
 	{
 	
-		Scanner sc= new Scanner(System.in);
-		BalanceBracket checkBalanced = new BalanceBracket();
-	
-		System.out.println("Enter the brackets to check whether they are Balanced Brackets or UnBalanced Brackets :");
-		String str = sc.nextLine();
+		Node root = null;
 		
-		boolean result;
-		result = BalanceBracket.checkBalanced(str);
+		FindSumPair findSP = new FindSumPair();
+		root = findSP.insert(root,40);
+		root = findSP.insert(root,20);
+		root = findSP.insert(root,60);
+		root = findSP.insert(root,10);
+		root = findSP.insert(root,30);
+		root = findSP.insert(root,50);
+		root = findSP.insert(root,70);
 		
-		if(result)
-			System.out.println("The entered strings is Balanced brackets");
-		else
-			System.out.println("The entired string do not contain Balanced bracket");
-		
-		sc.close();
- 
+		int sum = 70;
+		findSP.findPairWithGivenSum ( root, sum);
 	}
 
 }
